@@ -1,16 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from renderer import render
+from moviepy.config import change_settings
+from datetime import datetime
 
 
-# Press the green button in the gutter to run the script.
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    startTime = datetime.now()
+    change_settings({"IMAGEMAGICK_BINARY": r"C:\Program Files\ImageMagick-7.1.1-Q16-HDRI\magick.exe"})
+    render('files/funny).mp4').write_videofile('result.mp4', fps=30)
+    print(datetime.now() - startTime)
+    #ToDo return 60 fps
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
